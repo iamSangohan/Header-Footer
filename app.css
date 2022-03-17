@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+ul{
+    list-style: none;
+}
+
+header{
+    background: #ffb74d;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+#titre{
+    margin: 7%;
+    float: left;
+    font-weight: 600;
+}
+
+li, a{
+    font-weight: 600;
+    font-size: 18;
+    color: black;
+    text-decoration: none;
+}
+
+li{
+    display: inline-block;
+    font-size: 18px;
+    padding: 10px;
+    margin: 0 20px;
+}
+
+li a {
+    transition: all 0.3s ease 0s;
+}
+
+li a:hover{
+    color: whitesmoke;
+}
+
+nav{
+    float: right;
+    margin-right: 5%;
+    display: flex;
+}
+
+
+/* Menu Burger */
+.menuBurger{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid #fff; */
+    display: none;
+}
+
+.btnBurger{
+    width: 40px;
+    height: 5px;
+    background: black;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 143, 102, 0.267);
+    transition: all .5s ease-in-out;
+}
+
+.btnBurger::before, .btnBurger::after{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    background: black;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 143, 102, 0.267);
+    transition: all .5s ease-in-out;
+}
+.btnBurger::before{
+    transform: translateY(-12px);
+}
+
+.btnBurger::after{
+    transform: translateY(12px);
+}
+
+.menuBurger.open .btnBurger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+.menuBurger.open .btnBurger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.menuBurger.open .btnBurger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* Fin */
+
+
+@media only screen and (max-width : 680px) {
+
+    header{
+        position: fixed;
+    }
+
+    .menuBurger{
+        display: flex;
+    }
+
+    nav ul{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: #ffb74d;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all .3s ease-in-out;
+    }
+
+    nav li {
+        text-align: center;
+        width: 100%;
+        padding: 15px 0;
+        margin: 40px 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    nav ul li a:active {
+        color: whitesmoke;
+    }
+}
+
+.material-icons{
+    color: black;
+}
+
+footer{
+    background: #ffb74d;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
